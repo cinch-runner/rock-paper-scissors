@@ -1,30 +1,34 @@
-function getComputerChoice() {
-  const options = ["rock", "paper", "scissors"];
-  const randomIndex = Math.floor(Math.random() * 3);
-  return options[randomIndex];
-}
+let getComputerChoice = () => {
+  let options = ["zergling", "marine", "zealot"];
+  return options[Math.floor(Math.random() * 3)];
+};
 
-function playRound(playerSelection, computerSelection) {
+// zealot < marine < zergling
+
+let playRound = (playerSelection, computerSelection) => {
+  playerSelection = playerSelection.toLowerCase();
+
   if (playerSelection === computerSelection) {
     return `It's a tie!`;
-  } else if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection === "paper" && computerSelection === "rock") ||
-    (playerSelection === "scissors" && computerSelection === "paper")
-  ) {
-    return `Player wins!`;
+  } else if (playerSelection === "zergling" && computerSelection === "marine") {
+    return "You win! Zergling beats marine";
+  } else if (playerSelection === "marine" && computerSelection === "zealot") {
+    return `You win! Marine beats Zealot`;
+  } else if (playerSelection === "zealot" && computerSelection === "zergling") {
+    return "You win! Zealot beats Zergling";
   } else {
-    return `Computer wins!`;
+    return `You lose! ${playerSelection} lost to ${computerSelection}`;
   }
-}
+};
 
-function game() {
+let game = (playerSelection, computerSelection) => {
   for (let i = 0; i < 5; i++) {
-    return playRound();
+    return playRound(playerSelection, computerSelection);
   }
-}
+};
 
-const playerSelection = prompt("Choose your weapon: ");
+const playerSelection = "marine";
+// prompt("Make a choice: Zealot, Marine, or Zergling");
 const computerSelection = getComputerChoice();
 
-console.log(game(), `Computer chose ${computerSelection}`);
+console.log(game(playerSelection, computerSelection));
