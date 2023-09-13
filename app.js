@@ -21,14 +21,14 @@ let playRound = (playerSelection, computerSelection) => {
   }
 };
 
-let game = (playerSelection, computerSelection) => {
+const game = () => {
   for (let i = 0; i < 5; i++) {
-    return playRound(playerSelection, computerSelection);
+    const playerSelection = prompt("Choose a unit: ");
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
+
+    console.log(`Round ${i + 1}: ${result}`);
   }
 };
 
-const playerSelection = "marine";
-// prompt("Make a choice: Zealot, Marine, or Zergling");
-const computerSelection = getComputerChoice();
-
-console.log(game(playerSelection, computerSelection));
+const results = game();
