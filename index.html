@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors...</title>
-</head>
-<body>
-    <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zealot - Marine - Zergling</title>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>Zealot - Marine - Zergling</h1>
+    <h3>Please choose a unit:</h3>
+    <button id="zealot" onclick="playerSelection = 'zealot'">Zealot</button>
+    <button id="marine" onclick="playerSelection = 'marine'">Marine</button>
+    <button id="zergling" onclick="playerSelection = 'zergling'">
+      Zergling
+    </button>
+    <h2>Player score: <span id="player-score">0</span></h2>
+    <h2>Computer score: <span id="computer-score">0</span></h2>
+  </body>
 </html>
