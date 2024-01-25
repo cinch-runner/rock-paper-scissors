@@ -6,16 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zealot - Marine - Zergling</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Zealot - Marine - Zergling</h1>
-    <h3>Please choose a unit:</h3>
-    <button id="zealot" onclick="playerSelection = 'zealot'">Zealot</button>
-    <button id="marine" onclick="playerSelection = 'marine'">Marine</button>
-    <button id="zergling" onclick="playerSelection = 'zergling'">
-      Zergling
-    </button>
-    <h2>Player score: <span id="player-score">0</span></h2>
-    <h2>Computer score: <span id="computer-score">0</span></h2>
+    <div id="main-container">
+      <h1>Zealot - Marine - Zergling</h1>
+      <h3>Please choose a unit:</h3>
+      <div id="image-row">
+        <div class="image-container">
+          <img src="assets/zealot.jpeg" alt="" />
+          <button id="zealot" onclick="assignPlayer()">Zealot</button>
+        </div>
+        <div class="image-container">
+          <img src="assets/marine.jpeg" alt="" />
+          <button id="marine" onclick="assignPlayer()">Marine</button>
+        </div>
+        <div class="image-container">
+          <img src="assets/zergling.jpeg" alt="" />
+          <button id="zergling" onclick="assignPlayer()">Zergling</button>
+        </div>
+      </div>
+      <div id="score-container">
+        <h2>Player score: <span id="player-score"></span></h2>
+        <h2>Computer score: <span id="computer-score"></span></h2>
+      </div>
+      <h2 id="round-result"></h2>
+    </div>
   </body>
 </html>
